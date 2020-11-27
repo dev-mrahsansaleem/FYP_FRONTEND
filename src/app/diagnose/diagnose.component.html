@@ -14,6 +14,7 @@
   width="500"
 />
 
+<!-- 
 <div class="container">
   <span style="color: red" *ngIf="message">{{ message }}</span>
   <input
@@ -25,11 +26,39 @@
   />
   <br />
   <br />
+  <img [src]="imgURLs" height="200" *ngIf="imgURLs" />
 </div>
-<img [src]="imgURLs" height="200" *ngIf="imgURLs" />
 
 <p>{{ imgURLs }}</p>
 <button mat-button routerLink="/report">Check this</button>
 <br />
 <input type="file" name="image" (change)="onFileSelect($event)" />
-<button type="button" (click)="onUpload()">Send to server</button>
+<button type="button" (click)="onUpload()">Send to server</button> -->
+<br /><br /><br />
+
+<div class="container">
+  <form
+    [formGroup]="ImageForm"
+    (ngSubmit)="submitImageForm()"
+    enctype="multipart/form-data"
+  >
+    <div class="form-group form-row">
+      <label>select an image </label>
+      <br />
+      <input
+        type="file"
+        id="image"
+        formControlName="image"
+        accept="image/*"
+        (change)="onImageSelect($event)"
+      />
+    </div>
+
+    <div class="form-group form-row">
+      <!-- <label>select an image</label> -->
+      <input type="submit" class="btn btn-primary" />
+    </div>
+  </form>
+</div>
+
+<br /><br /><br />
