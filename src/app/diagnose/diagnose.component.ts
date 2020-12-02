@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { ImageService } from '../services/image.service';
 import { FormControl, FormGroup } from '@angular/forms';
-
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-diagnose',
   templateUrl: './diagnose.component.html',
   styleUrls: ['./diagnose.component.scss'],
 })
 export class DiagnoseComponent {
+  extractedImageBase64: SafeResourceUrl;
+
   ImageForm: FormGroup = new FormGroup({
     image: new FormControl(null),
   });
 
-  imageFile: { file: any; name: string };
+  imageFile: { file: any; name: string; imageURL: string };
 
   onImageSelect(event) {
     console.log('image select call hua');
@@ -25,6 +27,7 @@ export class DiagnoseComponent {
         this.imageFile = {
           file: file,
           name: file.filename,
+          imageURL: reader.result as string,
         };
       };
 
@@ -40,10 +43,16 @@ export class DiagnoseComponent {
     console.log(this.ImageForm.get('image').value);
     this.imageSer.postImage(formData).subscribe((res) => {
       console.log(res);
+      this.extractedImageBase64 = this._sanitizer.bypassSecurityTrustResourceUrl(
+        'data:image/jpg;charset=utf-8;base64,' + res['encoded_extration_image']
+      );
     });
   }
 
-  constructor(private imageSer: ImageService) {}
+  constructor(
+    private imageSer: ImageService,
+    private _sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit(): void {}
 }
