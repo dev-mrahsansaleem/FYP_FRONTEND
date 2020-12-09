@@ -43,12 +43,13 @@
     enctype="multipart/form-data"
   >
     <div class="form-group form-row">
-      <label>select an image </label>
+      <label><b>Image</b></label>
       <br />
       <input
+        class="form-control"
+        formControlName="file"
         type="file"
         id="image"
-        formControlName="image"
         accept="image/*"
         (change)="onImageSelect($event)"
       />
@@ -56,7 +57,7 @@
 
     <div class="form-group form-row">
       <!-- <label>select an image</label> -->
-      <input type="submit" class="btn btn-primary" />
+      <input class="btn btn-dark" style="color: white" type="submit" />
     </div>
   </form>
 </div>
@@ -64,9 +65,24 @@
 <div class="container">
   <br /><br /><br />
   <h1>Orignal image</h1>
-  <img [src]="imageFile.imageURL" height="200" *ngIf="imageFile.imageURL" />
+  <img
+    [src]="imageFile.imageURL"
+    style="height: 300px; width: 300px"
+    *ngIf="imageFile.imageURL"
+  />
   <br /><br /><br />
   <h1>Extracted image</h1>
-  <img [src]="extractedImageBase64" height="200" *ngIf="extractedImageBase64" />
+  <img
+    [src]="extractedImageBase64"
+    style="height: 300px; width: 300px"
+    *ngIf="extractedImageBase64"
+  />
+  <br /><br /><br />
+  <h1>Enhanced image</h1>
+  <img
+    [src]="enhancedImageBase64"
+    style="height: 300px; width: 300px"
+    *ngIf="enhancedImageBase64"
+  />
 </div>
 <br /><br /><br />

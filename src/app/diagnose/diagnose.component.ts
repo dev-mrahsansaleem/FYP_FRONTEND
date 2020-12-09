@@ -9,6 +9,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class DiagnoseComponent {
   extractedImageBase64: SafeResourceUrl;
+  enhancedImageBase64: SafeResourceUrl;
 
   ImageForm: FormGroup = new FormGroup({
     image: new FormControl(null),
@@ -18,8 +19,10 @@ export class DiagnoseComponent {
 
   onImageSelect(event) {
     console.log('image select call hua');
+    // console.log(event);
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
+      // console.log(file);
       this.ImageForm.get('image').setValue(file.filename);
       const reader = new FileReader();
 
@@ -31,8 +34,8 @@ export class DiagnoseComponent {
         };
       };
 
-      console.log(event.srcElement.files[0]);
-      console.log(file);
+      // console.log(event.srcElement.files[0]);
+      // console.log(file);
       reader.readAsDataURL(file);
     }
   }
@@ -45,6 +48,9 @@ export class DiagnoseComponent {
       console.log(res);
       this.extractedImageBase64 = this._sanitizer.bypassSecurityTrustResourceUrl(
         'data:image/jpg;charset=utf-8;base64,' + res['encoded_extration_image']
+      );
+      this.enhancedImageBase64 = this._sanitizer.bypassSecurityTrustResourceUrl(
+        'data:image/jpg;charset=utf-8;base64,' + res['encoded_enhanced_image']
       );
     });
   }
