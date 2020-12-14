@@ -11,4 +11,21 @@ export class RegisterLoginDialogComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {}
+
+  //form functions
+
+  loginFormSubmit() {
+    console.log('btn login form submit');
+  }
+  btnLoginClick() {
+    console.log('btn login clicked');
+  }
+
+  registerFormSubmit() {
+    console.log('btn register form submit');
+  }
+  btnRegisterClick() {
+    console.log('btn register clicked');
+  }
+  //form functions
 }

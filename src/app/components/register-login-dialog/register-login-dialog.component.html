@@ -1,9 +1,9 @@
 <div class="login-page">
-  <mat-tab-group >
-    <mat-tab label="Sign In">
-      <form action="">
-        <div  >
-          <mat-form-field  style="display:block;">
+  <mat-tab-group color="accent">
+    <mat-tab label="Login">
+      <div class="formSpace">
+        <form (ngSubmit)="loginFormSubmit()">
+          <mat-form-field color="accent" style="display: block">
             <input
               matInput
               placeholder="Email"
@@ -15,9 +15,8 @@
             <mat-error *ngIf="email.invalid">Email is required</mat-error>
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
-        </div>
-        <div >
-          <mat-form-field  style="display:block;">
+
+          <mat-form-field color="accent" style="display: block">
             <input
               matInput
               placeholder="Password"
@@ -36,25 +35,30 @@
             </mat-error>
             <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>
-        </div>
-        <div>
-          <mat-checkbox>Remember Me!</mat-checkbox>
-        </div>
-        <div>
-          <button mat-raised-button color="primary" class="login-button">
-            Sign In
-          </button>
+
+          <!-- <mat-checkbox>Remember Me!</mat-checkbox> -->
+
+          <div align="end">
+            <button
+              mat-raised-button
+              color="accent"
+              class="login-button"
+              (click)="btnLoginClick()"
+            >
+              Login
+            </button>
+          </div>
           <br />
-          <button mat-raised-button class="login-button">
+          <!-- <button mat-raised-button class="login-button">
             Login with Google
-          </button>
-        </div>
-      </form>
+          </button> -->
+        </form>
+      </div>
     </mat-tab>
-    <mat-tab label="Sign Up">
-      <mat-card-content>
-        <form action="">
-          <mat-form-field style="display:block;" >
+    <mat-tab label="Register">
+      <div class="formSpace">
+        <form (ngSubmit)="registerFormSubmit()">
+          <mat-form-field color="accent" style="display: block">
             <input
               matInput
               placeholder="User Name"
@@ -68,7 +72,8 @@
               Username is required
             </mat-error>
           </mat-form-field>
-          <mat-form-field style="display:block;" >
+
+          <mat-form-field color="accent" style="display: block">
             <input
               matInput
               placeholder="Email"
@@ -80,7 +85,7 @@
             <mat-error *ngIf="email.invalid">Email is required</mat-error>
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
-          <mat-form-field style="display:block;" >
+          <mat-form-field color="accent" style="display: block">
             <input
               matInput
               placeholder="Password"
@@ -99,7 +104,8 @@
             </mat-error>
             <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>
-          <mat-form-field style="display:block;" >
+
+          <mat-form-field color="accent" style="display: block">
             <input
               matInput
               placeholder="Password"
@@ -110,16 +116,25 @@
               ngModel
               #repassword="ngModel"
             />
+
             <mat-error *ngIf="repassword.errors && repassword.errors.required">
               Re-Enter Password is required
             </mat-error>
             <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>
-          <button mat-raised-button color="primary" class="login-button">
-            Sign Up
-          </button>
+
+          <div align="end">
+            <button
+              mat-raised-button
+              color="accent"
+              class="login-button"
+              (click)="btnRegisterClick()"
+            >
+              Register
+            </button>
+          </div>
         </form>
-      </mat-card-content>
+      </div>
     </mat-tab>
   </mat-tab-group>
 </div>
