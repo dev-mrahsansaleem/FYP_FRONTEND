@@ -1,9 +1,9 @@
 <div class="login-page">
-  <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+  <mat-tab-group >
     <mat-tab label="Sign In">
       <form action="">
-        <div>
-          <mat-form-field>
+        <div  >
+          <mat-form-field  style="display:block;">
             <input
               matInput
               placeholder="Email"
@@ -16,8 +16,8 @@
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
         </div>
-        <div>
-          <mat-form-field>
+        <div >
+          <mat-form-field  style="display:block;">
             <input
               matInput
               placeholder="Password"
@@ -54,7 +54,7 @@
     <mat-tab label="Sign Up">
       <mat-card-content>
         <form action="">
-          <mat-form-field>
+          <mat-form-field style="display:block;" >
             <input
               matInput
               placeholder="User Name"
@@ -68,7 +68,7 @@
               Username is required
             </mat-error>
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field style="display:block;" >
             <input
               matInput
               placeholder="Email"
@@ -80,7 +80,7 @@
             <mat-error *ngIf="email.invalid">Email is required</mat-error>
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field style="display:block;" >
             <input
               matInput
               placeholder="Password"
@@ -99,7 +99,7 @@
             </mat-error>
             <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field style="display:block;" >
             <input
               matInput
               placeholder="Password"
