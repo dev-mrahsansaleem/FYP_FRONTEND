@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
+import { Users } from 'src/app/models/user-model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register-login-dialog',
@@ -8,24 +8,54 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register-login-dialog.component.css'],
 })
 export class RegisterLoginDialogComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  //var
+
+  hide: boolean = true;
+
+  // loginUserData = {
+  //   username: '',
+  //   password: '',
+  // };
+  loginUserData: Users = new Users();
+  registerUserData: Users = new Users();
+
+  // registerUserData = {
+  //   username: '',
+  //   password: '',
+  //   cPassword: '',
+  // };
+  //var
+
+  constructor(private _auth: AuthService) {}
 
   ngOnInit(): void {}
 
   //form functions
 
-  loginFormSubmit() {
-    console.log('btn login form submit');
+  btnRegisterClick() {
+    console.log('btn register click');
+    console.log(this.registerUserData);
   }
-  btnLoginClick() {
-    console.log('btn login clicked');
+  registerFormSubmit() {
+    console.log('register form submit');
+    this._auth.registerUser(this.registerUserData).subscribe((res: any) => {
+      console.log(res);
+    });
   }
 
-  registerFormSubmit() {
-    console.log('btn register form submit');
+  btnLoginClick() {
+    console.log('btn login click');
+    // console.log(this.loginUserData);
   }
-  btnRegisterClick() {
-    console.log('btn register clicked');
+  loginFormSubmit() {
+    console.log('login form submit');
+    this._auth.loginUser(this.loginUserData).subscribe((res: any) => {
+      // console.log(res['token']);
+      localStorage.setItem('token', res['token']);
+      // console.log('from storage=>>>>>>>>> ' + localStorage.getItem('token'));
+      // localStorage.removeItem('token');  use to logout
+    });
   }
+
   //form functions
 }

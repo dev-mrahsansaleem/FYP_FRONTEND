@@ -6,25 +6,29 @@
           <mat-form-field color="accent" style="display: block">
             <input
               matInput
-              placeholder="Email"
+              placeholder="Username"
+              type="text"
               required
-              name="email"
-              ngModel
-              #email="ngModel"
+              name="username"
+              [(ngModel)]="loginUserData.username"
+              #username="ngModel"
             />
-            <mat-error *ngIf="email.invalid">Email is required</mat-error>
-            <mat-icon matSuffix>email</mat-icon>
+            <mat-error *ngIf="username.errors && username.errors.required">
+              Username is required
+            </mat-error>
+
+            <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
 
           <mat-form-field color="accent" style="display: block">
             <input
               matInput
               placeholder="Password"
-              type="password"
+              [type]="hide ? 'password' : 'text'"
               required
               minlength="6"
               name="password"
-              ngModel
+              [(ngModel)]="loginUserData.password"
               #password="ngModel"
             />
             <mat-error *ngIf="password.errors && password.errors.required">
@@ -33,6 +37,17 @@
             <mat-error *ngIf="password.errors && password.errors.minlength">
               Password must be of length 6
             </mat-error>
+            <!-- 
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button> -->
+
             <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>
 
@@ -61,30 +76,20 @@
           <mat-form-field color="accent" style="display: block">
             <input
               matInput
-              placeholder="User Name"
+              placeholder="Username"
+              type="text"
               required
               name="username"
-              ngModel
+              [(ngModel)]="registerUserData.username"
               #username="ngModel"
             />
-            <mat-icon matSuffix>perm_identity</mat-icon>
-            <mat-error *ngIf="username.invalid">
+            <mat-error *ngIf="username.errors && username.errors.required">
               Username is required
             </mat-error>
-          </mat-form-field>
 
-          <mat-form-field color="accent" style="display: block">
-            <input
-              matInput
-              placeholder="Email"
-              required
-              name="email"
-              ngModel
-              #email="ngModel"
-            />
-            <mat-error *ngIf="email.invalid">Email is required</mat-error>
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
+
           <mat-form-field color="accent" style="display: block">
             <input
               matInput
@@ -93,7 +98,7 @@
               required
               minlength="6"
               name="password"
-              ngModel
+              [(ngModel)]="registerUserData.password"
               #password="ngModel"
             />
             <mat-error *ngIf="password.errors && password.errors.required">
@@ -108,17 +113,19 @@
           <mat-form-field color="accent" style="display: block">
             <input
               matInput
-              placeholder="Password"
+              placeholder="cPassword"
               type="password"
               required
               minlength="6"
-              name="repassword"
-              ngModel
-              #repassword="ngModel"
+              name="cPassword"
+              [(ngModel)]="registerUserData.cPassword"
+              #cPassword="ngModel"
             />
-
-            <mat-error *ngIf="repassword.errors && repassword.errors.required">
-              Re-Enter Password is required
+            <mat-error *ngIf="cPassword.errors && cPassword.errors.required">
+              Password is required
+            </mat-error>
+            <mat-error *ngIf="cPassword.errors && cPassword.errors.minlength">
+              Password must be of length 6
             </mat-error>
             <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>

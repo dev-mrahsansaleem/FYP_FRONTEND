@@ -7,20 +7,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RegisterLoginDialogComponent } from './components/register-login-dialog/register-login-dialog.component';
-import { UserService } from './services/user.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, RegisterLoginDialogComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    RegisterLoginDialogComponent,
+    HomeComponent,
+    AboutComponent,
+  ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [UserService],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
