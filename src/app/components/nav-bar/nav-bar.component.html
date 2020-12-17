@@ -3,13 +3,33 @@
   <div>
     <button mat-raised-button color="primary" routerLink="home">Home</button>
     <button mat-raised-button color="primary" routerLink="about">About</button>
-    <button mat-raised-button color="primary">contact</button>
+    <button mat-raised-button color="primary" routerLink="contact">
+      contact us
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      routerLink="diagnose"
+      *ngIf="showButton"
+    >
+      diagnose
+    </button>
+
     <button
       mat-raised-button
       color="accent"
       (click)="openRegisterLoginDialog()"
+      *ngIf="!showButton"
     >
       Register/login
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="logoutClick()"
+      *ngIf="showButton"
+    >
+      Logout
     </button>
   </div>
 </mat-toolbar>

@@ -7,7 +7,7 @@ import { Users } from '../models/user-model';
 })
 export class AuthService {
   //var
-  private _BASEURL = 'http://127.0.0.1:5000/api/';
+  private _BASEURL: string = 'http://127.0.0.1:5000/api/';
   //var
   constructor(private http: HttpClient) {}
 
@@ -19,10 +19,11 @@ export class AuthService {
     const headers = new HttpHeaders({
       Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
     });
-    // headers.append(
-    //   'Authorization',
-    //   'Basic Auth' + btoa(data.username + ':' + data.password)
-    // );
+
     return this.http.get(this._BASEURL + 'login', { headers });
+  }
+
+  loggedIn() {
+    return !!localStorage.getItem('token');
   }
 }

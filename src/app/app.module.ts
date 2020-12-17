@@ -12,6 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { ContactComponent } from './components/contact/contact.component';
+import { DiagnoseComponent } from './components/diagnose/diagnose.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { AuthService } from './services/auth.service';
     RegisterLoginDialogComponent,
     HomeComponent,
     AboutComponent,
+    ContactComponent,
+    DiagnoseComponent,
   ],
 
   imports: [
@@ -30,7 +35,7 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

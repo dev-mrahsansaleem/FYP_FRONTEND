@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Users } from 'src/app/models/user-model';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -26,7 +27,7 @@ export class RegisterLoginDialogComponent implements OnInit {
   // };
   //var
 
-  constructor(private _auth: AuthService) {}
+  constructor(private _auth: AuthService, private route: Router) {}
 
   ngOnInit(): void {}
 
@@ -52,8 +53,8 @@ export class RegisterLoginDialogComponent implements OnInit {
     this._auth.loginUser(this.loginUserData).subscribe((res: any) => {
       // console.log(res['token']);
       localStorage.setItem('token', res['token']);
+      window.location.reload();
       // console.log('from storage=>>>>>>>>> ' + localStorage.getItem('token'));
-      // localStorage.removeItem('token');  use to logout
     });
   }
 

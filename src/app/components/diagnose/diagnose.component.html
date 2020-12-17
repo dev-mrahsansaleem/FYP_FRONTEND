@@ -1,0 +1,29 @@
+<div class="container">
+  <form (ngSubmit)="submitImageForm()" enctype="multipart/form-data">
+    <div class="form-group form-row">
+      <label>select an image </label>
+      <br />
+      <input
+        type="file"
+        id="image"
+        accept="image/*"
+        (change)="onImageSelect($event)"
+      />
+    </div>
+
+    <div class="form-group form-row">
+      <!-- <label>select an image</label> -->
+      <input type="submit" class="btn btn-primary" />
+    </div>
+  </form>
+  <br /><br /><br />
+  <h1>Orignal image</h1>
+  <img [src]="imageFile.imageURL" height="200" *ngIf="imageFile.imageURL" />
+  <br /><br /><br />
+  <h1>Extracted image</h1>
+  <img [src]="extractedImageBase64" height="200" *ngIf="extractedImageBase64" />
+  <br /><br /><br />
+  <h1>Enhance image</h1>
+  <img [src]="enhancedImageBase64" height="200" *ngIf="enhancedImageBase64" />
+</div>
+<br /><br /><br />
