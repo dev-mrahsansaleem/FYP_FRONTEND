@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, empty } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,10 +13,12 @@ export class ImageService {
 
   postImage(formData: FormData) {
     const token = localStorage.getItem('token');
-
-    const headers = new HttpHeaders().set('x-access-token', token);
-    return this.http.post<any>(this._BASEURL + 'Image', formData, {
-      headers,
-    });
+    if (token) {
+      const headers = new HttpHeaders().set('x-access-token', token);
+      return this.http.post<any>(this._BASEURL + 'Image', formData, {
+        headers,
+      });
+    }
+    return empty();
   }
 }

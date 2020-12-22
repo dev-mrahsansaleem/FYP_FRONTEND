@@ -9,9 +9,9 @@ import { ImageService } from 'src/app/services/image.service';
 })
 export class DiagnoseComponent implements OnInit {
   //var
-  extractedImageBase64: SafeResourceUrl | undefined;
-  enhancedImageBase64: SafeResourceUrl | undefined;
-  imageFile: { file: any; name: string; imageURL: string } | undefined;
+  extractedImageBase64: SafeResourceUrl | any;
+  enhancedImageBase64: SafeResourceUrl | any;
+  imageFile: { file: any; name: string; imageURL: string } | any;
   // var
   constructor(
     private imageService: ImageService,

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "App": {
+    "FYP_FRONTEND": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/App",
+            "outputPath": "dist/FYP_FRONTEND",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "App:build"
+            "browserTarget": "FYP_FRONTEND:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "App:build:production"
+              "browserTarget": "FYP_FRONTEND:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "App:build"
+            "browserTarget": "FYP_FRONTEND:build"
           }
         },
         "test": {
@@ -107,16 +107,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "App:serve"
+            "devServerTarget": "FYP_FRONTEND:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "App:serve:production"
+              "devServerTarget": "FYP_FRONTEND:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "App"
+  "defaultProject": "FYP_FRONTEND",
+  "cli": {
+    "analytics": "08c8e7d9-98eb-4a22-a13f-eec412ef3738"
+  }
 }
