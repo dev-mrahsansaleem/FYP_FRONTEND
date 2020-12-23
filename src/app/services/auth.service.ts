@@ -29,18 +29,18 @@ export class AuthService {
       'authorization',
       'Basic ' + btoa('username:password')
     );
-    headers_object.append('Content-Type', 'application/json');
-    headers_object.append(
-      'Authorization',
-      'Basic ' + btoa('username:password')
-    );
+    // headers_object.append('Content-Type', 'application/json');
+    // headers_object.append(
+    //   'Authorization',
+    //   'Basic ' + btoa('username:password')
+    // );
 
     const httpOptions = {
       headers: headers_object,
     };
     console.log(httpOptions);
     console.log(data);
-    return this.http.post(this._BASEURL + 'login', httpOptions);
+    return this.http.post(this._BASEURL + 'login', {}, httpOptions);
   }
 
   loggedIn() {
