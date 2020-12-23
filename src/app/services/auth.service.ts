@@ -17,11 +17,11 @@ export class AuthService {
   }
 
   loginUser(data: Users) {
-    const head = new HttpHeaders({
+    const headers_object = new HttpHeaders({
       Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
     });
-    // const head = new HttpHeaders();
-    // head.append(
+    // const headers_object = new HttpHeaders();
+    // headers_object.append(
     //   ' Authorization',
     //   'Basic ' + btoa(data.username + ':' + data.password)
     // );
