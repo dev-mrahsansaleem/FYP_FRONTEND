@@ -25,7 +25,7 @@ export class AuthService {
       ' Authorization',
       'Basic ' + btoa(data.username + ':' + data.password)
     );
-
+    console.log(head);
     return this.http.post(this._BASEURL + 'login', { head });
   }
 
