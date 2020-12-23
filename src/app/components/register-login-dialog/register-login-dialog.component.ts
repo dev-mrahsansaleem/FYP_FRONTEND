@@ -55,7 +55,7 @@ export class RegisterLoginDialogComponent implements OnInit {
       console.log('=>>>>>>>>>>>' + res);
       localStorage.setItem('token', res['token']);
       this.dialog.closeAll();
-      // window.location.reload();
+      window.location.reload();
       // console.log('from storage=>>>>>>>>> ' + localStorage.getItem('token'));
     });
   }
