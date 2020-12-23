@@ -20,13 +20,23 @@ export class AuthService {
     // const head = new HttpHeaders({
     //   Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
     // });
-    const head = new HttpHeaders();
-    head.append(
-      ' Authorization',
-      'Basic ' + btoa(data.username + ':' + data.password)
+    // const head = new HttpHeaders();
+    // head.append(
+    //   ' Authorization',
+    //   'Basic ' + btoa(data.username + ':' + data.password)
+    // );
+    var headers_object = new HttpHeaders();
+    headers_object.append('Content-Type', 'application/json');
+    headers_object.append(
+      'Authorization',
+      'Basic ' + btoa('username:password')
     );
-    console.log(head);
-    return this.http.post(this._BASEURL + 'login', { head });
+
+    const httpOptions = {
+      headers: headers_object,
+    };
+    console.log(httpOptions);
+    return this.http.post(this._BASEURL + 'login', httpOptions);
   }
 
   loggedIn() {
