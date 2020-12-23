@@ -21,7 +21,7 @@ export class AuthService {
       Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
     });
 
-    return this.http.post(this._BASEURL + 'login', { headers: head });
+    return this.http.post(this._BASEURL + 'login', { head });
   }
 
   loggedIn() {
