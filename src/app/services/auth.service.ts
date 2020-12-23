@@ -17,9 +17,14 @@ export class AuthService {
   }
 
   loginUser(data: Users) {
-    const head = new HttpHeaders({
-      Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
-    });
+    // const head = new HttpHeaders({
+    //   Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
+    // });
+    const head = new HttpHeaders();
+    head.append(
+      ' Authorization',
+      'Basic ' + btoa(data.username + ':' + data.password)
+    );
 
     return this.http.post(this._BASEURL + 'login', { head });
   }
