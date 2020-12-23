@@ -17,18 +17,18 @@ export class AuthService {
   }
 
   loginUser(data: Users) {
-    // const head = new HttpHeaders({
-    //   Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
-    // });
+    const head = new HttpHeaders({
+      Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
+    });
     // const head = new HttpHeaders();
     // head.append(
     //   ' Authorization',
     //   'Basic ' + btoa(data.username + ':' + data.password)
     // );
-    var headers_object = new HttpHeaders().set(
-      'authorization',
-      'Basic ' + btoa('username:password')
-    );
+    // var headers_object = new HttpHeaders().set(
+    //   'authorization',
+    //   'Basic ' + btoa('username:password')
+    // );
     // headers_object.append('Content-Type', 'application/json');
     // headers_object.append(
     //   'Authorization',
