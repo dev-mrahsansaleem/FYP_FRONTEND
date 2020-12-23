@@ -16,7 +16,7 @@ export class ImageService {
     const token = localStorage.getItem('token');
     if (token) {
       const headers = new HttpHeaders().set('x-access-token', token);
-      return this.http.post<any>(this._BASEURL + 'Image', formData, {
+      return this.http.post<any>(this._BASEURL + 'sendImage', formData, {
         headers,
       });
     }
