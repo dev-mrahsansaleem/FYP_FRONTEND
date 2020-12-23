@@ -25,7 +25,10 @@ export class AuthService {
     //   ' Authorization',
     //   'Basic ' + btoa(data.username + ':' + data.password)
     // );
-    var headers_object = new HttpHeaders();
+    var headers_object = new HttpHeaders().set(
+      'authorization',
+      'Basic ' + btoa('username:password')
+    );
     headers_object.append('Content-Type', 'application/json');
     headers_object.append(
       'Authorization',
@@ -36,6 +39,7 @@ export class AuthService {
       headers: headers_object,
     };
     console.log(httpOptions);
+    console.log(data);
     return this.http.post(this._BASEURL + 'login', httpOptions);
   }
 

@@ -52,7 +52,7 @@ export class RegisterLoginDialogComponent implements OnInit {
   loginFormSubmit() {
     console.log('login form submit');
     this._auth.loginUser(this.loginUserData).subscribe((res: any) => {
-      // console.log(res['token']);
+      console.log(res);
       localStorage.setItem('token', res['token']);
       this.dialog.closeAll();
       window.location.reload();
