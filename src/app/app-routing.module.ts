@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DiagnoseComponent } from './components/diagnose/diagnose.component';
+import { HistoryComponent } from './components/history/history.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: 'diagnose',
     component: DiagnoseComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'history',
+    component: HistoryComponent,
     canActivate: [AuthGuard],
   },
 ];

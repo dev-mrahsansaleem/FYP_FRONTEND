@@ -22,4 +22,15 @@ export class ImageService {
     }
     return empty();
   }
+
+  getHistory() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const headers = new HttpHeaders().set('x-access-token', token);
+      return this.http.get<any>(this._BASEURL + 'history', {
+        headers,
+      });
+    }
+    return empty();
+  }
 }

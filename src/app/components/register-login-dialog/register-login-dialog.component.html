@@ -26,7 +26,7 @@
               placeholder="Password"
               [type]="hide ? 'password' : 'text'"
               required
-              minlength="6"
+              minlength="2"
               name="password"
               [(ngModel)]="loginUserData.password"
               #password="ngModel"
@@ -96,7 +96,7 @@
               placeholder="Password"
               type="password"
               required
-              minlength="6"
+              minlength="2"
               name="password"
               [(ngModel)]="registerUserData.password"
               #password="ngModel"
@@ -116,7 +116,7 @@
               placeholder="cPassword"
               type="password"
               required
-              minlength="6"
+              minlength="2"
               name="cPassword"
               [(ngModel)]="registerUserData.cPassword"
               #cPassword="ngModel"

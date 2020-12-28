@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 const material = [
   MatButtonModule,
   MatToolbarModule,
@@ -26,6 +26,7 @@ const material = [
   MatButtonModule,
   MatCheckboxModule,
   MatIconModule,
+  MatGridListModule,
 ];
 
 @NgModule({

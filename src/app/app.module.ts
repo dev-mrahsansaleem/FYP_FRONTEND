@@ -15,6 +15,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { ContactComponent } from './components/contact/contact.component';
 import { DiagnoseComponent } from './components/diagnose/diagnose.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DiagnoseComponent } from './components/diagnose/diagnose.component';
     AboutComponent,
     ContactComponent,
     DiagnoseComponent,
+    HistoryComponent,
   ],
 
   imports: [

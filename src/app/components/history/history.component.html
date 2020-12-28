@@ -1,0 +1,20 @@
+<div>
+  <p>history works!</p>
+
+  <mat-grid-list class="container" cols="3" rowHeight="500">
+    <mat-grid-tile *ngFor="let item of data">
+      <!-- {{ item["image"] }} -->
+      <mat-card>
+        <mat-card-title>
+          <p>Image Name: {{ item["imageName"] }}</p>
+          <p>
+            <span style="color: blue">{{ item["createdOn"] }}</span>
+          </p>
+        </mat-card-title>
+        <mat-card-content>
+          <img [src]="item['image']" height="300" />
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
