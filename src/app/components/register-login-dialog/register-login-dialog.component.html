@@ -4,15 +4,8 @@
       <div class="formSpace">
         <form (ngSubmit)="loginFormSubmit()">
           <mat-form-field color="accent" style="display: block">
-            <input
-              matInput
-              placeholder="Username"
-              type="text"
-              required
-              name="username"
-              [(ngModel)]="loginUserData.username"
-              #username="ngModel"
-            />
+            <input matInput placeholder="Username" type="text" required name="username"
+              [(ngModel)]="loginUserData.username" #username="ngModel" />
             <mat-error *ngIf="username.errors && username.errors.required">
               Username is required
             </mat-error>
@@ -21,16 +14,8 @@
           </mat-form-field>
 
           <mat-form-field color="accent" style="display: block">
-            <input
-              matInput
-              placeholder="Password"
-              [type]="hide ? 'password' : 'text'"
-              required
-              minlength="2"
-              name="password"
-              [(ngModel)]="loginUserData.password"
-              #password="ngModel"
-            />
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" required minlength="2"
+              name="password" [(ngModel)]="loginUserData.password" #password="ngModel" />
             <mat-error *ngIf="password.errors && password.errors.required">
               Password is required
             </mat-error>
@@ -54,12 +39,7 @@
           <!-- <mat-checkbox>Remember Me!</mat-checkbox> -->
 
           <div align="end">
-            <button
-              mat-raised-button
-              color="accent"
-              class="login-button"
-              (click)="btnLoginClick()"
-            >
+            <button mat-raised-button color="accent" class="login-button" (click)="btnLoginClick()">
               Login
             </button>
           </div>
@@ -74,15 +54,8 @@
       <div class="formSpace">
         <form (ngSubmit)="registerFormSubmit()">
           <mat-form-field color="accent" style="display: block">
-            <input
-              matInput
-              placeholder="Username"
-              type="text"
-              required
-              name="username"
-              [(ngModel)]="registerUserData.username"
-              #username="ngModel"
-            />
+            <input matInput placeholder="Username" type="text" required name="username"
+              [(ngModel)]="registerUserData.username" #username="ngModel" />
             <mat-error *ngIf="username.errors && username.errors.required">
               Username is required
             </mat-error>
@@ -91,16 +64,8 @@
           </mat-form-field>
 
           <mat-form-field color="accent" style="display: block">
-            <input
-              matInput
-              placeholder="Password"
-              type="password"
-              required
-              minlength="2"
-              name="password"
-              [(ngModel)]="registerUserData.password"
-              #password="ngModel"
-            />
+            <input matInput placeholder="Password" type="password" required minlength="2" name="password"
+              [(ngModel)]="registerUserData.password" #password="ngModel" />
             <mat-error *ngIf="password.errors && password.errors.required">
               Password is required
             </mat-error>
@@ -111,16 +76,8 @@
           </mat-form-field>
 
           <mat-form-field color="accent" style="display: block">
-            <input
-              matInput
-              placeholder="cPassword"
-              type="password"
-              required
-              minlength="2"
-              name="cPassword"
-              [(ngModel)]="registerUserData.cPassword"
-              #cPassword="ngModel"
-            />
+            <input matInput placeholder="cPassword" type="password" required minlength="2" name="cPassword"
+              [(ngModel)]="registerUserData.cPassword" #cPassword="ngModel" />
             <mat-error *ngIf="cPassword.errors && cPassword.errors.required">
               Password is required
             </mat-error>
@@ -131,12 +88,7 @@
           </mat-form-field>
 
           <div align="end">
-            <button
-              mat-raised-button
-              color="accent"
-              class="login-button"
-              (click)="btnRegisterClick()"
-            >
+            <button mat-raised-button color="accent" class="login-button" (click)="btnRegisterClick()">
               Register
             </button>
           </div>

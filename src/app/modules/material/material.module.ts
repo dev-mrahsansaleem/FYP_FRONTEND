@@ -11,7 +11,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatDividerModule} from '@angular/material/divider';
+import { LayoutModule } from '@angular/cdk/layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule } from '@angular/material/list';
+// import {MatCarouselModule }from '@ngbmodule/material-carousel';
+import {MatCarouselModule }from '@ngmodule/material-carousel';
 const material = [
+  MatExpansionModule,
+  MatListModule,
+  MatTableModule,
+  MatSidenavModule,
   MatButtonModule,
   MatToolbarModule,
   MatDialogModule,
@@ -27,6 +40,10 @@ const material = [
   MatCheckboxModule,
   MatIconModule,
   MatGridListModule,
+  MatCarouselModule.forRoot(),
+  LayoutModule,
+  
+
 ];
 
 @NgModule({

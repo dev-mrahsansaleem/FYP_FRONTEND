@@ -5,7 +5,7 @@ import { ImageService } from 'src/app/services/image.service';
 @Component({
   selector: 'app-diagnose',
   templateUrl: './diagnose.component.html',
-  styleUrls: ['./diagnose.component.css'],
+  styleUrls: ['./diagnose.component.scss'],
 })
 export class DiagnoseComponent implements OnInit {
   //var

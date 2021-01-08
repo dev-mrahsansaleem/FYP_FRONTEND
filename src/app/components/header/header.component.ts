@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/services/auth.service';
 import { RegisterLoginDialogComponent } from '../register-login-dialog/register-login-dialog.component';
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class NavBarComponent implements OnInit {
+export class HeaderComponent implements OnInit {
+  @Output() public sidenavToggle = new EventEmitter();
+
   showButton: boolean = false;
   token: any = '';
 
@@ -28,4 +30,12 @@ export class NavBarComponent implements OnInit {
     // this.token = localStorage.getItem('token');
     // console.log('=?>>>>>>>>>>>>>>>' + this.token);
   }
+//   onClick(){
+//     document.getElementById("btn").style.color='plum';
+//  }
+ public onToggleSidenav = () => { 
+  this.sidenavToggle.emit();
+
+}
+
 }

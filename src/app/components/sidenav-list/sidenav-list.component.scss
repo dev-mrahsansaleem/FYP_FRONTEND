@@ -1,0 +1,17 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover, a:active{
+    color: plum;
+    transition-delay: 0.5s;
+    transition: 2s;
+    transition-duration: 2s;
+    
+}
+
+.nav-caption{
+    display: inline-block;
+    padding-left: 6px;
+}
