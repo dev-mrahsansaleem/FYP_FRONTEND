@@ -16,10 +16,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { ContactComponent } from './components/contact/contact.component';
 import { DiagnoseComponent } from './components/diagnose/diagnose.component';
 import { HistoryComponent } from './components/history/history.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
-
 
 @NgModule({
   declarations: [
@@ -31,9 +27,6 @@ import { SidenavListComponent } from './components/sidenav-list/sidenav-list.com
     ContactComponent,
     DiagnoseComponent,
     HistoryComponent,
-    FooterComponent,
-    HeaderComponent,
-    SidenavListComponent,
   ],
 
   imports: [

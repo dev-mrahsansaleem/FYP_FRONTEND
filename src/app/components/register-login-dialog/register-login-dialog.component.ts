@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-register-login-dialog',
   templateUrl: './register-login-dialog.component.html',
-  styleUrls: ['./register-login-dialog.component.scss'],
+  styleUrls: ['./register-login-dialog.component.css'],
 })
 export class RegisterLoginDialogComponent implements OnInit {
   //var
