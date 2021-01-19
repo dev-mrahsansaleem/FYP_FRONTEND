@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DiagnoseComponent } from './components/diagnose/diagnose.component';
@@ -11,7 +10,7 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: '/home',
     pathMatch: 'full',
   },
   {
@@ -19,7 +18,6 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    // secure one
     path: 'about',
     component: AboutComponent,
   },
@@ -28,14 +26,16 @@ const routes: Routes = [
     component: ContactComponent,
   },
   {
+    // secure one
     path: 'diagnose',
     component: DiagnoseComponent,
     canActivate: [AuthGuard],
   },
   {
+    // secure one
     path: 'history',
     component: HistoryComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
 ];
 

@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="navbar">
+<!-- <mat-toolbar color="primary" class="navbar">
   <div>Solution Provider</div>
   <div>
     <button mat-raised-button color="primary" routerLink="home">Home</button>
@@ -34,6 +34,77 @@
     <button
       mat-raised-button
       color="accent"
+      (click)="logoutClick()"
+      *ngIf="showButton"
+    >
+      Logout
+    </button>
+  </div>
+</mat-toolbar> -->
+
+<mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/home"><img src="./assets/images/pinbrain.jpg" /></a>
+  </div>
+
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <!-- <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <li>
+        <a routerLink="/home">HOME</a>
+      </li>
+      <li>
+        <a routerLink="/about">About</a>
+      </li>
+
+      <li>
+        <a routerLink="/contact">Contact</a>
+      </li>
+      <li>
+        <a routerLink="/diagnose">Diagnose</a>
+      </li>
+      <li>
+        <a routerLink="/history">History</a>
+      </li>
+    </ul> -->
+    <div class="nav-link-wrapper">
+      <a routerLink="about" *ngIf="!showButton">About</a>
+    </div>
+    <div class="nav-link-wrapper">
+      <a href="contact" *ngIf="!showButton">Contact Us</a>
+    </div>
+    <div class="nav-link-wrapper">
+      <a href="">Diagnose Disease</a>
+    </div>
+    <div class="nav-link-wrapper">
+      <a routerLink="history" *ngIf="!showButton">History</a>
+    </div>
+  </div>
+
+  <!-- <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <li>
+        <button>Register/Login</button>
+      </li>
+    </ul>
+  </div> -->
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs class="navigation-items">
+    <button
+      mat-button
+      style="border-radius: 3px; color: whitesmoke"
+      id="btn"
+      (click)="openRegisterLoginDialog()"
+    >
+      Login
+      <mat-icon> login</mat-icon>Register<mat-icon>how_to_reg</mat-icon>
+    </button>
+    <button
+      mat-button
+      style="border-radius: 3px; color: whitesmoke"
       (click)="logoutClick()"
       *ngIf="showButton"
     >

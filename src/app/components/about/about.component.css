@@ -1,0 +1,24 @@
+.aboutpagebakgroundimage {
+  margin-top: 50px;
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.img-text-wrapper {
+  top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding-right: 400px;
+  color: plum;
+  position: absolute;
+}
+.myfont {
+  font-size: 30px;
+}

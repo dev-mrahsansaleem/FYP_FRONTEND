@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/services/auth.service';
 import { RegisterLoginDialogComponent } from '../register-login-dialog/register-login-dialog.component';
@@ -9,10 +9,17 @@ import { RegisterLoginDialogComponent } from '../register-login-dialog/register-
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent implements OnInit {
+  @Output() public sidenavToggle = new EventEmitter();
+
   showButton: boolean = false;
   token: any = '';
 
   constructor(private _auth: AuthService, public dialog: MatDialog) {}
+
+  onToggleSidenav() {
+    console.log('etst');
+    this.sidenavToggle.emit();
+  }
 
   openRegisterLoginDialog() {
     this.dialog.open(RegisterLoginDialogComponent);

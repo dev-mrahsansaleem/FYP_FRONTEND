@@ -11,6 +11,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSelectModule } from '@angular/material/select';
+
 const material = [
   MatButtonModule,
   MatToolbarModule,
@@ -27,6 +33,11 @@ const material = [
   MatCheckboxModule,
   MatIconModule,
   MatGridListModule,
+  MatSidenavModule,
+  MatListModule,
+  MatExpansionModule,
+  MatTableModule,
+  MatSelectModule,
 ];
 
 @NgModule({

@@ -16,6 +16,10 @@ import { AuthGuard } from './guards/auth.guard';
 import { ContactComponent } from './components/contact/contact.component';
 import { DiagnoseComponent } from './components/diagnose/diagnose.component';
 import { HistoryComponent } from './components/history/history.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SideNavBarComponent } from './components/side-nav-bar/side-nav-bar.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
@@ -27,15 +31,20 @@ import { HistoryComponent } from './components/history/history.component';
     ContactComponent,
     DiagnoseComponent,
     HistoryComponent,
+    FooterComponent,
+    SideNavBarComponent,
   ],
 
   imports: [
+    FlexLayoutModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
     HttpClientModule,
+    MatCarouselModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent],
