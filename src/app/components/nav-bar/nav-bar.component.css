@@ -26,7 +26,7 @@ mat-toolbar {
   //     display: flex;
   // } */
 .nav-link-wrapper {
-  margin-right: 20px;
+  margin-left: 20px;
   font-size: 0.9em;
   text-transform: uppercase;
   font-weight: bolder;
@@ -41,7 +41,7 @@ mat-toolbar {
   transition: color 0.5s;
 }
 .nav-link-wrapper a:hover {
-  color: plum;
+  /* color: plum; */
 }
 .nav-link-wrapper:hover {
   border-bottom: 1px solid plum;
