@@ -16,9 +16,9 @@ export class DiagnoseComponent implements OnInit {
   constructor(
     private imageService: ImageService,
     private _sanitizer: DomSanitizer
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   onImageSelect(event: any) {
     console.log('image select call hua');
     if (event.target.files.length > 0) {
@@ -43,16 +43,19 @@ export class DiagnoseComponent implements OnInit {
       const formData = new FormData();
       formData.append('file', this.imageFile.file);
       // console.log(this.ImageForm.get('image').value);
-      this.imageService.postImage(formData).subscribe((res: any) => {
-        console.log(res);
-        this.extractedImageBase64 = this._sanitizer.bypassSecurityTrustResourceUrl(
-          'data:image/jpg;charset=utf-8;base64,' +
+      var response = this.imageService.postImage(formData);
+      if (response) {
+        response.subscribe((res: any) => {
+          console.log(res);
+          this.extractedImageBase64 = this._sanitizer.bypassSecurityTrustResourceUrl(
+            'data:image/jpg;charset=utf-8;base64,' +
             res['encoded_extration_image']
-        );
-        this.enhancedImageBase64 = this._sanitizer.bypassSecurityTrustResourceUrl(
-          'data:image/jpg;charset=utf-8;base64,' + res['encoded_enhanced_image']
-        );
-      });
+          );
+          this.enhancedImageBase64 = this._sanitizer.bypassSecurityTrustResourceUrl(
+            'data:image/jpg;charset=utf-8;base64,' + res['encoded_enhanced_image']
+          );
+        });
+      }
     }
   }
 }

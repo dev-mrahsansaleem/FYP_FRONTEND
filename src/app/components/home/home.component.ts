@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor() { }
+  ngOnInit(): void {
+
+  }
   samples = [
     { image: './assets/images/a.jpg', subtitle: 'hhshssh' },
     { image: './assets/images/a.jpg', subtitle: 'hhshssh' },
@@ -65,6 +67,7 @@ export class HomeComponent implements OnInit {
   slides = [
     { image: './assets/images/lit.jpg', text: 'test1' },
     { image: './assets/images/ya.jpg', text: 'test' },
+    { image: './assets/images/koo.jpg', text: 'test' },
     { image: './assets/images/koo.jpg', text: 'test' },
   ];
 }

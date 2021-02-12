@@ -10,7 +10,7 @@ export class AuthService {
   // private _BASEURL: string = 'http://127.0.0.1:5000/api/';
   private _BASEURL: string = 'https://fmri-17.herokuapp.com/api/';
   //var
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   registerUser(data: object) {
     return this.http.post<any>(this._BASEURL + 'register', data);
@@ -44,6 +44,6 @@ export class AuthService {
   }
 
   loggedIn() {
-    return !!localStorage.getItem('token');
+    return !!sessionStorage.getItem('token');
   }
 }

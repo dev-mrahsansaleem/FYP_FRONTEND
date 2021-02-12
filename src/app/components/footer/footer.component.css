@@ -5,16 +5,21 @@ footer {
   text-align: center;
   color: white;
   height: 300px;
-  border-radius: 6px 6px 10px;
+  /* border-radius: 6px 6px 10px; */
 }
 .footer-content {
   margin: 5px;
   font-family: "Dancing Script", cursive;
 }
 
+.footer-content>div{
+  display: flex;
+  margin-top: 30px;
+}
+
 .mat-icon {
   font-size: 50px;
-  padding-top: 40px;
+  /* padding-top: 40px; */
 }
 h5 {
   font-size: 17px;
@@ -22,8 +27,10 @@ h5 {
 }
 .iconify {
   font-size: 30px;
-  padding-top: 40px;
-  margin-top: 2px;
+  margin-right: 20px;
+  /* margin-right: 10%; */
+  /* padding-top: 40px; */
+  /* margin-top: 2px; */
 }
 .footer-span {
   font-size: 17px;

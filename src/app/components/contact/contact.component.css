@@ -65,7 +65,7 @@ textarea {
 .btn-custom {
   background-color: #808e9b !important;
   color: white !important;
-  padding-right: 8px !important;
+  /* padding-right: 8px !important; */
   height: 40px;
 }
 .material-icons {

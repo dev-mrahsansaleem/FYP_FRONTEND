@@ -14,7 +14,7 @@ export class NavBarComponent implements OnInit {
   showButton: boolean = false;
   token: any = '';
 
-  constructor(private _auth: AuthService, public dialog: MatDialog) {}
+  constructor(private _auth: AuthService, public dialog: MatDialog) { }
 
   onToggleSidenav() {
     console.log('etst');
@@ -26,13 +26,14 @@ export class NavBarComponent implements OnInit {
   }
   logoutClick() {
     console.log('logout');
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
+
     // console.log('=?>>>>>>>>>>>>>>> logout' + this.token);
     window.location.reload();
   }
   ngOnInit(): void {
     this.showButton = this._auth.loggedIn();
-    // this.token = localStorage.getItem('token');
+    // this.token = sessionStorage.getItem('token');
     // console.log('=?>>>>>>>>>>>>>>>' + this.token);
   }
 }

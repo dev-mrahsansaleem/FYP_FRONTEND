@@ -27,9 +27,9 @@ export class RegisterLoginDialogComponent implements OnInit {
   // };
   //var
 
-  constructor(private _auth: AuthService, public dialog: MatDialog) {}
+  constructor(private _auth: AuthService, public dialog: MatDialog) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   //form functions
 
@@ -53,10 +53,10 @@ export class RegisterLoginDialogComponent implements OnInit {
     console.log('login form submit');
     this._auth.loginUser(this.loginUserData).subscribe((res: any) => {
       console.log('=>>>>>>>>>>>' + res);
-      localStorage.setItem('token', res['token']);
+      sessionStorage.setItem('token', res['token']);
       this.dialog.closeAll();
       window.location.reload();
-      // console.log('from storage=>>>>>>>>> ' + localStorage.getItem('token'));
+      // console.log('from storage=>>>>>>>>> ' + sessionStorage.getItem('token'));
     });
   }
 
