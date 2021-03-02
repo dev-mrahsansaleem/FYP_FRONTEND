@@ -16,6 +16,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const material = [
   MatButtonModule,
@@ -38,10 +39,11 @@ const material = [
   MatExpansionModule,
   MatTableModule,
   MatSelectModule,
+  MatProgressBarModule
 ];
 
 @NgModule({
   imports: [material],
   exports: [material],
 })
-export class MaterialModule {}
+export class MaterialModule { }

@@ -1,28 +1,21 @@
-.slider {
-  margin-top: 30px;
-}
+
 .main-content {
-  margin-top: 50px;
-  font-family: "Dancing Script", cursive;
-  color: black;
+  margin: 50px;
 }
-.card-content {
-  font-family: "Dancing Script", cursive;
-}
+
 .mat-subheading-2 {
   text-align: center;
-  font-family: "Dancing Script", cursive;
   font-size: 40px;
   font-weight: bolder;
-  color: black;
 }
+
 .mat-body-1 {
-  font-family: "Dancing Script", cursive;
   text-align: center;
   align-items: center;
   padding-top: 20px;
   font-size: 34px;
 }
+
 .content {
   margin-top: 20px;
   padding: 16px;
@@ -31,11 +24,7 @@
 .content > mat-card {
   width: 200px;
 }
-mat-card {
-  background-color: rgb(41, 8, 41);
-}
 
-/** No CSS for this example */
 mat-card {
   margin-bottom: 10px;
 }
@@ -73,20 +62,23 @@ mat-card {
   padding-left: 100px;
   padding-right: 100px;
 }
+
 .logo-wrapper img {
   width: 50%;
   margin-bottom: 20px;
 }
+
 .img-text-wrapper:hover .subtitle {
   color: white;
   font-weight: bolder;
 }
-/*Needs to be more specific with selector*/
+
 .img-text-wrapper .subtitle {
   font-weight: 600;
   transition: 1s;
   color: transparent;
 }
+
 .img-darken {
   transition: 1s;
   filter: brightness(10%);
