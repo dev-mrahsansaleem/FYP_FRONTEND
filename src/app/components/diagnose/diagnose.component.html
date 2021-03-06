@@ -1,14 +1,22 @@
+<section class="progressBar" id="progressBar" *ngIf="showProgressBar">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</section>
+
+<!-- loader -->
+
 <div class="container">
   <form (ngSubmit)="submitImageForm()" enctype="multipart/form-data">
     <div class="form-group form-row">
-      <label>select an image </label>
+      <h1>
+        <label>Select an Image </label>
+      </h1>
       <br />
-      <input type="file" id="image" accept="image/*" (change)="onImageSelect($event)" />
-    </div>
+      <input hidden type="file" id="image" accept="image/x-png,image/jpeg,image/jpg" #btnUpload
+        (change)="onImageSelect($event)" />
+      <button style="margin-right: 10%;" mat-raised-button (click)="btnUpload.click()">Upload</button>
 
-    <div class="form-group form-row">
-      <!-- <label>select an image</label> -->
-      <input type="submit" class="btn btn-primary" />
+      <input hidden #submitUploaderForm type="submit" class="btn btn-primary" />
+      <button mat-raised-button color="primary" (click)="submitUploaderForm.click()">Submit</button>
     </div>
   </form>
   <br /><br /><br />

@@ -9,6 +9,7 @@ import { ImageService } from 'src/app/services/image.service';
 })
 export class DiagnoseComponent implements OnInit {
   //var
+  showProgressBar: Boolean = false;
   extractedImageBase64: SafeResourceUrl | any;
   enhancedImageBase64: SafeResourceUrl | any;
   imageFile: { file: any; name: string; imageURL: string } | any;
@@ -20,7 +21,8 @@ export class DiagnoseComponent implements OnInit {
 
   ngOnInit(): void { }
   onImageSelect(event: any) {
-    console.log('image select call hua');
+    this.showProgressBar = true;
+    // console.log('image select call hua');
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       // console.log(file);
@@ -35,10 +37,12 @@ export class DiagnoseComponent implements OnInit {
         };
       };
       reader.readAsDataURL(file);
+      this.showProgressBar = false;
     }
   }
   submitImageForm() {
-    console.log('form submit hua');
+    this.showProgressBar = true;
+    // console.log('form submit hua');
     if (this.imageFile) {
       const formData = new FormData();
       formData.append('file', this.imageFile.file);
@@ -54,6 +58,7 @@ export class DiagnoseComponent implements OnInit {
           this.enhancedImageBase64 = this._sanitizer.bypassSecurityTrustResourceUrl(
             'data:image/jpg;charset=utf-8;base64,' + res['encoded_enhanced_image']
           );
+          this.showProgressBar = false;
         });
       }
     }

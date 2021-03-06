@@ -18,7 +18,7 @@ mat-toolbar {
   text-decoration: none;
   transition: color 0.5s;
 }
-.nav-link-wrapper:hover {
+.nav-link-wrapper:hover > a {
   border-bottom: 1px solid plum;
 }
 button {
