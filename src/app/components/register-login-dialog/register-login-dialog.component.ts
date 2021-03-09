@@ -61,7 +61,7 @@ export class RegisterLoginDialogComponent implements OnInit {
       sessionStorage.setItem('token', res['token']);
       this.showProgressBar = false;
       this.dialog.closeAll();
-      window.location.reload();
+      window.location.reload(); //add it later for home screen refresh
       // console.log('from storage=>>>>>>>>> ' + sessionStorage.getItem('token'));
     });
   }

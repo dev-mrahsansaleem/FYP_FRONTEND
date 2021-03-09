@@ -19,30 +19,11 @@ export class AuthService {
   loginUser(data: Users) {
     const headers_object = new HttpHeaders({
       Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
-      "Access-Control-Allow-Origin": "*"
     });
-
-    headers_object.append("Access-Control-Allow-Origin", "*");
-    // const headers_object = new HttpHeaders();
-    // headers_object.append(
-    //   ' Authorization',
-    //   'Basic ' + btoa(data.username + ':' + data.password)
-    // );
-    // var headers_object = new HttpHeaders().set(
-    //   'authorization',
-    //   'Basic ' + btoa('username:password')
-    // );
-    // headers_object.append('Content-Type', 'application/json');
-    // headers_object.append(
-    //   'Authorization',
-    //   'Basic ' + btoa('username:password')
-    // );
 
     const httpOptions = {
       headers: headers_object,
     };
-    console.log(httpOptions);
-    console.log(data);
     return this.http.post(this._BASEURL + 'login', {}, httpOptions);
   }
 
