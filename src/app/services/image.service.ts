@@ -14,7 +14,7 @@ export class ImageService {
   postImage(formData: FormData) {
     const token = sessionStorage.getItem('token');
     if (token) {
-      const headers = new HttpHeaders().set('x-access-token', token).set('Access-Control-Allow-Origin', '*');
+      const headers = new HttpHeaders().set('x-access-token', token);
       return this.http.post<any>(this._BASEURL + 'sendImage', formData, {
         headers,
       });
@@ -25,7 +25,7 @@ export class ImageService {
   getHistory() {
     const token = sessionStorage.getItem('token');
     if (token) {
-      const headers = new HttpHeaders().set('x-access-token', token).set('Access-Control-Allow-Origin', '*');
+      const headers = new HttpHeaders().set('x-access-token', token);
       return this.http.get<any>(this._BASEURL + 'history', {
         headers,
       });
