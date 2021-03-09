@@ -11,8 +11,9 @@
         <label>Select an Image </label>
       </h1>
       <br />
-      <input hidden type="file" id="image" accept="image/x-png,image/jpeg,image/jpg" #btnUpload
-        (change)="onImageSelect($event)" />
+      <!-- <input hidden type="file" id="image" accept="image/x-png,image/jpeg,image/jpg,image/nii" #btnUpload
+        (change)="onImageSelect($event)" /> -->
+      <input hidden type="file" id="image" #btnUpload (change)="onImageSelect($event)" />
       <button style="margin-right: 10%;" mat-raised-button (click)="btnUpload.click()">Upload</button>
 
       <input hidden #submitUploaderForm type="submit" class="btn btn-primary" />

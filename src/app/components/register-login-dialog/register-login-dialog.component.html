@@ -1,3 +1,7 @@
+<section class="progressBar" id="progressBar" *ngIf="showProgressBar">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</section>
+
 <div class="login-page">
   <mat-tab-group color="accent">
     <mat-tab label="Login">
@@ -39,7 +43,7 @@
           <!-- <mat-checkbox>Remember Me!</mat-checkbox> -->
 
           <div align="end">
-            <button mat-raised-button class="login-button" (click)="btnLoginClick()">
+            <button mat-raised-button color="accent" class="login-button" (click)="btnLoginClick()">
               Login
             </button>
           </div>
@@ -53,13 +57,13 @@
     <mat-tab label="Register">
       <div class="formSpace">
         <form (ngSubmit)="registerFormSubmit()">
+
           <mat-form-field style="display: block">
             <input matInput placeholder="Username" type="text" required name="username"
               [(ngModel)]="registerUserData.username" #username="ngModel" />
             <mat-error *ngIf="username.errors && username.errors.required">
               Username is required
             </mat-error>
-
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
 
@@ -88,7 +92,7 @@
           </mat-form-field>
 
           <div align="end">
-            <button mat-raised-button class="login-button" (click)="btnRegisterClick()">
+            <button mat-raised-button color="accent" class="login-button" (click)="btnRegisterClick()">
               Register
             </button>
           </div>

@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterLoginDialogComponent implements OnInit {
   //var
+  showProgressBar: Boolean = false;
 
   hide: boolean = true;
 
@@ -38,9 +39,11 @@ export class RegisterLoginDialogComponent implements OnInit {
     console.log(this.registerUserData);
   }
   registerFormSubmit() {
+    this.showProgressBar = true;
     console.log('register form submit');
     this._auth.registerUser(this.registerUserData).subscribe((res: any) => {
       console.log(res);
+      this.showProgressBar = false;
       this.dialog.closeAll();
     });
   }
@@ -50,11 +53,13 @@ export class RegisterLoginDialogComponent implements OnInit {
     // console.log(this.loginUserData);
   }
   loginFormSubmit() {
-    console.log('login form submit');
+    // console.log('login form submit');
+    this.showProgressBar = true;
 
     this._auth.loginUser(this.loginUserData).subscribe((res: any) => {
-      console.log('=>>>>>>>>>>>' + res);
+      // console.log('=>>>>>>>>>>>' + res);
       sessionStorage.setItem('token', res['token']);
+      this.showProgressBar = false;
       this.dialog.closeAll();
       window.location.reload();
       // console.log('from storage=>>>>>>>>> ' + sessionStorage.getItem('token'));

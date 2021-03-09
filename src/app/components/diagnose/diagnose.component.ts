@@ -20,6 +20,7 @@ export class DiagnoseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void { }
+
   onImageSelect(event: any) {
     this.showProgressBar = true;
     // console.log('image select call hua');
@@ -28,7 +29,6 @@ export class DiagnoseComponent implements OnInit {
       // console.log(file);
       // this.ImageForm.get('image').setValue(file.filename);
       const reader = new FileReader();
-
       reader.onload = (_event) => {
         this.imageFile = {
           file: file,
@@ -40,6 +40,7 @@ export class DiagnoseComponent implements OnInit {
       this.showProgressBar = false;
     }
   }
+
   submitImageForm() {
     this.showProgressBar = true;
     // console.log('form submit hua');
