@@ -13,13 +13,16 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   registerUser(data: object) {
-    return this.http.post<any>(this._BASEURL + 'register', data);
+    return this.http.post<any>(this._BASEURL + 'register', data,);
   }
 
   loginUser(data: Users) {
     const headers_object = new HttpHeaders({
       Authorization: 'Basic ' + btoa(data.username + ':' + data.password),
+      "Access-Control-Allow-Origin": "*"
     });
+
+    headers_object.append("Access-Control-Allow-Origin", "*");
     // const headers_object = new HttpHeaders();
     // headers_object.append(
     //   ' Authorization',

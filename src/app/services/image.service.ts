@@ -15,6 +15,7 @@ export class ImageService {
     const token = sessionStorage.getItem('token');
     if (token) {
       const headers = new HttpHeaders().set('x-access-token', token);
+      headers.append("Access-Control-Allow-Origin", "*");
       return this.http.post<any>(this._BASEURL + 'sendImage', formData, {
         headers,
       });
