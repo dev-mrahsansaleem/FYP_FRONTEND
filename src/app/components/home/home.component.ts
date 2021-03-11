@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
       }
     },
     {
-      image: "./assets/team/jerry.png",
+      image: "./assets/team/ahsan.png",
       name: "Ahsan Saleem",
       email: "ahsnasaleem6389@gmail.com",
       links: {
