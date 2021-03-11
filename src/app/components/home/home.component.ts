@@ -11,63 +11,56 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  samples = [
-    { image: './assets/images/a.jpg', subtitle: 'hhshssh' },
-    { image: './assets/images/a.jpg', subtitle: 'hhshssh' },
-    { image: './assets/images/a.jpg', subtitle: 'hhshssh' },
-    { image: './assets/images/a.jpg', subtitle: 'hhshssh' },
-    { image: './assets/images/a.jpg', subtitle: 'hhshssh' },
-  ];
-
-  procedure = [
+  userData = [
     {
-      title: 'title 1',
-      image: './assets/images/lit.jpg',
-      content:
-        'Functional Magnetic Resonance Imaging Technology which is used to detect    the brain diseases.User Uses the MRI and fMRI report in our website to    diagnose the defects in the brain.',
+      image: "./assets/team/tooba.jpg",
+      name: "Tooba Pervaiz",
+      email: "tooba.sheikh1899@gmail.com",
+      links: {
+        "facebook": "",
+        "linkedin": "",
+        "twitter": "",
+        "instagram": "",
+      }
     },
     {
-      title: 'title 1',
-      image: './assets/images/lit.jpg',
-      content:
-        'Functional Magnetic Resonance Imaging Technology which is used to detect    the brain diseases.User Uses the MRI and fMRI report in our website to    diagnose the defects in the brain.',
+      image: "./assets/team/hafsa.jpg",
+      name: "Hafsa Saleem",
+      email: "hafsasaleemuet@gmail.com",
+      links: {
+        "facebook": "",
+        "linkedin": "",
+        "twitter": "",
+        "instagram": "",
+      }
     },
     {
-      title: 'title 1',
-      image: './assets/images/lit.jpg',
-      content:
-        'Functional Magnetic Resonance Imaging Technology which is used to detect    the brain diseases.User Uses the MRI and fMRI report in our website to    diagnose the defects in the brain.',
+      image: "./assets/team/samia.jpg",
+      name: "Samia Shoukat",
+      email: "samia.shoukat48@gmail.com",
+      links: {
+        "facebook": "",
+        "linkedin": "",
+        "twitter": "",
+        "instagram": "",
+      }
     },
     {
-      title: 'title 1',
-      image: './assets/images/lit.jpg',
-      content:
-        'Functional Magnetic Resonance Imaging Technology which is used to detect    the brain diseases.User Uses the MRI and fMRI report in our website to    diagnose the defects in the brain.',
+      image: "./assets/team/jerry.png",
+      name: "Ahsan Saleem",
+      email: "ahsnasaleem6389@gmail.com",
+      links: {
+        "facebook": "",
+        "linkedin": "",
+        "twitter": "",
+        "instagram": "",
+      }
     },
-    {
-      title: 'title 1',
-      image: './assets/images/lit.jpg',
-      content:
-        'Functional Magnetic Resonance Imaging Technology which is used to detect    the brain diseases.User Uses the MRI and fMRI report in our website to    diagnose the defects in the brain.',
-    },
-    {
-      title: 'title 1',
-      image: './assets/images/lit.jpg',
-      content:
-        'Functional Magnetic Resonance Imaging Technology which is used to detect    the brain diseases.User Uses the MRI and fMRI report in our website to    diagnose the defects in the brain.',
-    },
-    {
-      title: 'title 1',
-      image: './assets/images/lit.jpg',
-      content:
-        'Functional Magnetic Resonance Imaging Technology which is used to detect    the brain diseases.User Uses the MRI and fMRI report in our website to    diagnose the defects in the brain.',
-    },
-  ];
+  ]
 
   slides = [
-    { image: './assets/images/lit.jpg', text: 'test1' },
-    { image: './assets/images/ya.jpg', text: 'test' },
-    { image: './assets/images/koo.jpg', text: 'test' },
-    { image: './assets/images/koo.jpg', text: 'test' },
+    { image: './assets/banner/banner-1.jpg', text: 'heading-1', content: "We provide Best Results Of fMri Images For Brain Diseases." },
+    { image: './assets/banner/banner-2.jpg', text: 'heading-2', content: "We provide Best Results Of fMri Images For Brain Diseases." },
+    { image: './assets/banner/banner-3.jpg', text: 'heading-3', content: "We provide Best Results Of fMri Images For Brain Diseases." },
   ];
 }

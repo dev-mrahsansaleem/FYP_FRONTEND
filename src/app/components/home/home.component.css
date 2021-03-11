@@ -1,85 +1,162 @@
-
 .main-content {
-  margin: 50px;
+    margin: 50px;
 }
 
-.mat-subheading-2 {
-  text-align: center;
-  font-size: 40px;
-  font-weight: bolder;
+.ludwig {
+    position: relative;
+    padding-left: 1em;
+    border-left: 0.2em solid purple;
+    font-family: 'Roboto', serif;
+    font-size: 2.4em;
+    line-height: 1.5em;
+    font-weight: 100;
 }
 
-.mat-body-1 {
-  text-align: center;
-  align-items: center;
-  padding-top: 20px;
-  font-size: 34px;
+.ludwig:before,
+.ludwig:after {
+    content: '\201C';
+    font-family: 'Sanchez';
+    color: purple;
 }
 
-.content {
-  margin-top: 20px;
-  padding: 16px;
+.ludwig:after {
+    content: '\201D';
 }
 
-.content > mat-card {
-  width: 200px;
+.introSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-mat-card {
-  margin-bottom: 10px;
+.introSection .introContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.mr-10 {
-  margin-right: 10px;
+.introSection .introImage img {
+    display: flex;
+    border-radius: 10px;
 }
 
-.ml-10 {
-  margin-left: 10px;
-}
-.mb-10 {
-  margin-bottom: 10px;
-}
-.portfolio-item-wrapper {
-  position: relative;
-}
-.portfolio-img-background > img {
-  height: 350px;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+
+/* stages */
+
+
+/* stages */
+
+
+/* team */
+
+.teamSection {
+    margin: 20px;
 }
 
-.img-text-wrapper {
-  position: absolute;
-  top: 0%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-  padding-left: 100px;
-  padding-right: 100px;
+a {
+    text-decoration: none;
+    color: white;
 }
 
-.logo-wrapper img {
-  width: 50%;
-  margin-bottom: 20px;
+#team {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.img-text-wrapper:hover .subtitle {
-  color: white;
-  font-weight: bolder;
+.heading {
+    font-size: xx-large;
+    color: #ffffff;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin: 20px;
 }
 
-.img-text-wrapper .subtitle {
-  font-weight: 600;
-  transition: 1s;
-  color: transparent;
+.heading i {
+    background-color: purple;
+    box-shadow: 2px 2px 2px lightskyblue;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+    border-radius: 50%;
 }
 
-.img-darken {
-  transition: 1s;
-  filter: brightness(10%);
+.box {
+    width: 266px;
+    height: 340px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.teamContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.top-bar {
+    width: 50%;
+    height: 4px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
+
+.details img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+.details strong {
+    font-weight: 500;
+    color: blueviolet;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.details p {
+    font-size: 0.9rem;
+    color: purple;
+    margin: 15px 0;
+}
+
+.btn {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* team */
