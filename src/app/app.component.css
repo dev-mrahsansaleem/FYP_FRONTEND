@@ -1,10 +1,9 @@
 mat-sidenav-conatiner,
 mat-sidenav-content,
 mat-sidenav {
-  height: 100%;
+    height: 100%;
 }
 
 mat-sidenav {
-  width: 250px;
-  
+    width: 250px;
 }
